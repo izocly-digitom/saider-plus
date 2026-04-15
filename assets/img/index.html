@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'AIDER PLUS Village - Présentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Miniver&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        /* Format A4 paysage : 297mm × 210mm */
+        page {
+            display: block;
+            width: 297mm;
+            height: 210mm;
+            margin: 0 auto 20px;
+            background: white;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            page-break-after: always;
+            overflow: hidden;
+        }
+        
+        /* Pour l'impression - CRITIQUE pour PDF fidèle */
+        @media print {
+            @page {
+                size: 297mm 210mm;
+                margin: 0;
+            }
+            
+            html, body {
+                width: 297mm;
+                height: 210mm;
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+            
+            page {
+                width: 297mm;
+                height: 210mm;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Slide 1 - Couverture */
+        page.slide-1 {
+            background: #005F6B;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 60px 80px;
+        }
+        
+        .logo {
+            width: 250px;
+            height: 250px;
+            margin-bottom: 40px;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .title-block {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1;
+        }
+        
+        .village {
+            font-family: 'Miniver', cursive;
+            font-size: 48px;
+            font-weight: 400;
+            color: #FA9446;
+            line-height: 1;
+        }
+        
+        .orange-bar {
+            width: 40px;
+            height: 4px;
+            background: #FA9446;
+        }
+        
+        .baseline {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #FFFFFF;
+            line-height: 1.4;
+            margin-top: 10px;
+        }
+        
+        /* Header + Content container pour slides 2+ */
+        .left-column {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            bottom: 40px;
+            width: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .surtitre {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #005F6B;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            line-height: 1.2;
+        }
+        
+        .titre {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #005F6B;
+            line-height: 1.2;
+        }
+        
+        .header .orange-bar {
+            width: 40px;
+            height: 4px;
+            background: #FA9446;
+        }
+        
+        /* Image zone */
+        .image-zone {
+            position: absolute;
+            top: 0;
+            right: 40px;
+            bottom: 0;
+            width: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-zone img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        /* Content zone */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .texte {
+            font-family: 'Inter', sans-serif;
+            font-size: 19px;
+            font-weight: 400;
+            color: #2C3E50;
+            line-height: 1.5;
+        }
+        
+        .citation-box {
+            background: #e5fcff;
+            border: 1px solid #005F6B;
+            padding: 20px;
+        }
+        
+        .citation-box .citation-titre {
+            font-family: 'Miniver', cursive;
+            font-size: 27px;
+            font-weight: 400;
+            color: #005F6B;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+        
+        .citation-box .citation-texte {
+            font-family: 'Inter', sans-serif;
+            font-size: 19px;
+            font-weight: 400;
+            color: #005F6B;
+            line-height: 1.5;
+        }
+        
+        /* Slide 2 et suivantes */
+        page.slide-2,
+        page.slide-3,
+        page.slide-4,
+        page.slide-5,
+        page.slide-6,
+        page.slide-7,
+        page.slide-8,
+        page.slide-9,
+        page.slide-10 {
+            background: #FFFFFF;
+        }
+        
+        /* Slide 11 - 4ème de couverture */
+        page.slide-11 {
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 120px;
+        }
+        
+        .couv-content {
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .couv-titre {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #005F6B;
+            line-height: 1.2;
+        }
+        
+        .couv-content .orange-bar {
+            width: 60px;
+            height: 6px;
+            background: #FA9446;
+        }
+        
+        .couv-texte {
+            font-family: 'Inter', sans-serif;
+            font-size: 19px;
+            font-weight: 400;
+            color: #2C3E50;
+            line-height: 1.6;
+        }
+        
+        .couv-texte br + br {
+            display: none;
+        }
+        
+        .couv-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #005F6B;
+            line-height: 1.4;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Couverture -->
+    <page class="slide-1">
+        <div class="logo">
+            <img src="logo_transparent.png" alt="S'AIDER PLUS Village Logo">
+        </div>
+        <div class="title-block">
+            <div class="main-title">S'AIDER PLUS</div>
+            <div class="village">Village</div>
+            <div class="orange-bar"></div>
+            <div class="baseline">
+                Transformer l'art de vivre antillais en<br>
+                infrastructure territoriale du bien-vieillir
+            </div>
+        </div>
+    </page>
+    
+    <!-- Page 2: Présentation du Village -->
+    <page class="slide-2">
+        <div class="left-column">
+            <div class="header">
+                <div class="surtitre">UN LIEU OÙ LES SÉNIORS ET LES AIDANTS SE RETROUVENT</div>
+                <div class="titre">Présentation du Village</div>
+                <div class="orange-bar"></div>
+            </div>
+            
+            <div class="content">
+                <div class="texte">
+                    Le Village S'AIDER PLUS est une plateforme territoriale d'orchestration dédiée à la prévention de la fragilité, au soutien des aidants et au maintien de l'autonomie.
+                </div>
+                
+                <div class="citation-box">
+                    <div class="citation-titre">Focus sur les salariés aidants</div>
+                    <div class="citation-texte">
+                        Le Village accorde une attention particulière aux salariés aidants, reconnaissant leur double engagement professionnel et familial.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-zone">
+            <img src="page_05_img_1873.webp" alt="Présentation du Village">
+        </div>
+    </page>
+    
+    <!-- Page 3: Un Village intégré dans la nature -->
+    <page class="slide-3">
+        <div class="left-column">
+            <div class="header">
+                <div class="surtitre">UN LIEU OÙ LES SÉNIORS ET LES AIDANTS SE RETROUVENT</div>
+                <div class="titre">Un Village intégré dans la nature</div>
+                <div class="orange-bar"></div>
+            </div>
+            
+            <div class="content">
+                <div class="texte">
+                    Le jardin tropical : un espace de soin à ciel ouvert<br><br>
+                    Sur deux hectares, le jardin tropical est le premier espace de soin et de prévention du Village.
+                </div>
+                
+                <div class="citation-box">
+                    <div class="citation-titre">La nature soigne</div>
+                    <div class="citation-texte">
+                        Venez l'expérimenter, à votre rythme. Marche douce, air libre, lien social.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-zone">
+            <img src="page_06_img_2291.webp" alt="Village dans la nature">
+        </div>
+    </page>
+    
+    <!-- Page 4: Un Village où le repos est primordial -->
+    <page class="slide-4">
+        <div class="left-column">
+            <div class="header">
+                <div class="surtitre">UN LIEU OÙ LES SÉNIORS ET LES AIDANTS SE RETROUVENT</div>
+                <div class="titre">Un Village où le repos est primordial</div>
+                <div class="orange-bar"></div>
+            </div>
+            
+            <div class="content">
+                <div class="texte">
+                    Le Centre de répit : souffler pour mieux tenir<br><br>
+                    Avec ses 40 chambres ouvertes sur le jardin, le Centre de répit est un lieu pensé pour la récupération.
+                </div>
+                
+                <div class="citation-box">
+                    <div class="citation-titre">Poser les bagages</div>
+                    <div class="citation-texte">
+                        Reprendre son souffle. Récupérer, décompresser, et repartir avec davantage de ressources.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-zone">
+            <img src="page_07_img_2599.webp" alt="Centre de répit">
+        </div>
+    </page>
+    
+    <!-- Page 5: Un centre d'hydrothérapie -->
+    <page class="slide-5">
+        <div class="left-column">
+            <div class="header">
+                <div class="surtitre">UN LIEU OÙ LES SÉNIORS ET LES AIDANTS SE RETROUVENT</div>
+                <div class="titre">Un centre d'hydrothérapie</div>
+                <div class="orange-bar"></div>
+            </div>
+            
+            <div class="content">
+                <div class="texte">
+                    Le Centre d'hydrothérapie : l'eau comme outil de soin<br><br>
+                    Le Centre dispose de deux bassins pour des séances de détente, d'exercice doux et de récupération.
+                </div>
+                
+                <div class="citation-box">
+                    <div class="citation-titre">L'eau soulage</div>
+                    <div class="citation-texte">
+                        L'eau soulage ce que les mots ne suffisent pas à dire. Retrouvez corps, légèreté et énergie.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-zone">
+            <img src="page_08_img_2993.webp" alt="Centre d'hydrothérapie">
+        </div>
+    </page>
+    
+    <!-- Page 6: Le pôle de Gestion sociale -->
+    <page class="slide-6">
+        <div class="left-column">
+            <div class="header">
+                <div class="surtitre">UN LIEU OÙ LES SÉNIORS ET LES AIDANTS SE RETROUVENT</div>
+                <div class="titre">Le pôle de Gestion sociale</div>
+                <div class="orange-bar"></div>
+            </div>
+            
+            <div class="content">
+                <div class="texte">
+                    Le fil qui relie tout<br><br>
+                    Au cœur du Village, le Pôle assure la coordination des parcours entre les différents acteurs du territoire.
+                </div>
+                
+                <div class="citation-box">
+                    <div class="citation-titre">Un parcours lisible</div>
+                    <div class="citation-texte">
+                        Un interlocuteur qui connaît votre situation. Coordonner, orienter et relier.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-zone">
+            <img src="page_09_img_3363.webp" alt="Pôle de Gestion sociale">
+        </div>
+    </page>
+    
+    <!-- Page 7: Le Pôle Prévention -->
+    <page class="slide-7">
+        <div class="left-column">
+            <div class="header">
+                <div class="surtitre">AGIR TÔT, PRÉSERVER LONGTEMPS</div>
+                <div class="titre">Le Pôle Prévention</div>
+                <div class="orange-bar"></div>
+            </div>
+            
+            <div class="content">
+                <div class="texte">
+                    Le Pôle Prévention réunit tous les outils du maintien des capacités : salle de sport, parcours sportif extérieur, salle de formation.
+                </div>
+                
+                <div class="citation-box">
+                    <div class="citation-titre">Prévenir, c'est choisir</div>
+                    <div class="citation-texte">
+                        Prévenir, c'est choisir de rester acteur de sa santé. Un pôle complet pour anticiper, renforcer et durer.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-zone">
+            <img src="page_10_img_3669.webp" alt="Pôle Prévention">
+        </div>
+    </page>
+    
+    <!-- Page 8: Le Pôle Activités -->
+    <page class="slide-8">
+        <div class="left-column">
+            <div class="header">
+                <div class="surtitre">UN VILLAGE VIVANT, OUVERT SUR SON TERRITOIRE</div>
+                <div class="titre">Le Pôle Activités</div>
+                <div class="orange-bar"></div>
+            </div>
+            
+            <div class="content">
+                <div class="texte">
+                    Le Pôle activités est l'espace de vie collective du Village. Ateliers intergénérationnels, animations culturelles, conférences.
+                </div>
+                
+                <div class="citation-box">
+                    <div class="citation-titre">Se retrouver</div>
+                    <div class="citation-texte">
+                        Se retrouver. Partager. Appartenir. Le cœur vivant du Village bat ici.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-zone">
+            <img src="page_11_img_3973.webp" alt="Pôle Activités">
+        </div>
+    </page>
+    
+    <!-- Page 9: L'Espace estime de soi -->
+    <page class="slide-9">
+        <div class="left-column">
+            <div class="header">
+                <div class="surtitre">VALORISER LE PILIER QUE L'ON EST</div>
+                <div class="titre">L'Espace estime de soi</div>
+                <div class="orange-bar"></div>
+            </div>
+            
+            <div class="content">
+                <div class="texte">
+                    Coiffure, beauté, soins : cet espace offre des prestations simples mais profondes. Prendre soin de son apparence est un acte de reconnexion à soi.
+                </div>
+                
+                <div class="citation-box">
+                    <div class="citation-titre">Se reconnecter</div>
+                    <div class="citation-texte">
+                        Se reconnecter avec soi-même et se redécouvrir sous un nouveau jour. Un espace dédié à l'image et à la confiance.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-zone">
+            <img src="page_12_img_4317.webp" alt="Espace estime de soi">
+        </div>
+    </page>
+    
+    <!-- Page 10: L'Espace restauration -->
+    <page class="slide-10">
+        <div class="left-column">
+            <div class="header">
+                <div class="surtitre">VALORISER LE PILIER QUE L'ON EST</div>
+                <div class="titre">L'Espace restauration</div>
+                <div class="orange-bar"></div>
+            </div>
+            
+            <div class="content">
+                <div class="texte">
+                    Le Village dispose d'un restaurant et d'un snack ouverts sur le jardin. Des points de vie où seniors, aidants et familles se croisent.
+                </div>
+                
+                <div class="citation-box">
+                    <div class="citation-titre">Se retrouver autour d'un repas</div>
+                    <div class="citation-texte">
+                        Toute la richesse de se retrouver autour d'un repas. Simplement. Des espaces où le lien social se tisse naturellement.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-zone">
+            <img src="page_13_img_4657.webp" alt="Espace restauration">
+        </div>
+    </page>
+    
+    <!-- Page 11: 4ème de couverture -->
+    <page class="slide-11">
+        <div class="couv-content">
+            <div class="couv-titre">Co-construisons demain</div>
+            <div class="orange-bar"></div>
+            
+            <div class="couv-texte">
+                S'AIDER PLUS Village constitue une réponse innovante, structurée et immédiatement opérationnelle aux enjeux du vieillissement.<br>
+                C'est une signature territoriale portée par une vision forte et une ingénierie déjà avancée. Ce projet s'inscrit pleinement dans les priorités publiques et territoriales.<br>
+                Il a vocation à devenir un modèle de référence en matière de prévention et de soutien aux aidants.<br>
+                La Guadeloupe sera la première à avoir un tel site. Il n'en existe aucun autre comme celui-ci nulle-part ailleurs.
+            </div>
+            
+            <div class="couv-cta">
+                Rejoignez-nous. Et montrons à nos enfants que nous avons su anticiper l'avenir.
+            </div>
+        </div>
+    </page>
+</body>
+</html>
