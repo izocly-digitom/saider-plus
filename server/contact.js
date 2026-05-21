@@ -49,12 +49,7 @@ const escapeHtml = (s) =>
 
 const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
+export default async function contactHandler(req, res) {
   const missing = REQUIRED_ENV.filter((k) => !process.env[k]);
   if (missing.length) {
     return res
@@ -62,12 +57,7 @@ export default async function handler(req, res) {
       .json({ error: `Configuration manquante : ${missing.join(', ')}` });
   }
 
-  let body;
-  try {
-    body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
-  } catch {
-    return res.status(400).json({ error: 'Corps de requête invalide.' });
-  }
+  const body = req.body || {};
 
   // Honeypot — silently accept so bots don't get a useful signal.
   if (body.website && String(body.website).trim() !== '') {
