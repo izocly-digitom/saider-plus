@@ -9,7 +9,7 @@ export default function Contact() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero centered">
         <div className="container">
           <div className="supra">Rejoignez-nous</div>
           <h1>Co-construisons demain.</h1>
@@ -18,7 +18,7 @@ export default function Contact() {
             Nous cherchons des partenaires engagés pour co-construire le premier Village S'AIDER
             PLUS en Guadeloupe, premier jalon d'un réseau de Villages ultramarins et hexagonaux.
           </p>
-          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 8 }}>
+          <div className="cta-row" style={{ marginTop: 8 }}>
             <Link to="/projet" className="btn">Relire le projet</Link>
             <Link to="/impact-modele" className="btn">Voir l'impact attendu</Link>
           </div>

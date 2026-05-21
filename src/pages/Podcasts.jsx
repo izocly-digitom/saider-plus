@@ -38,7 +38,7 @@ export default function Podcasts() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero centered">
         <div className="container">
           <div className="supra">Voix du projet</div>
           <h1>Podcasts S'AIDER PLUS</h1>

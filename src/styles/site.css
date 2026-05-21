@@ -287,7 +287,7 @@ nav.primary a.active { color: #fff; font-weight: 600; background: rgba(255,255,2
   margin: 18px 0 28px;
   line-height: 1.55;
 }
-.hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
 .link-cta {
   display: inline-flex;
   align-items: center;
@@ -854,6 +854,11 @@ ul.bullets li::before {
 .page-hero h1 { color: #fff; max-width: 780px; }
 .page-hero .supra { color: var(--teal-light); }
 .page-hero p { color: rgba(255,255,255,0.85); max-width: 680px; font-size: 1.05rem; }
+.page-hero.centered { text-align: center; }
+.page-hero.centered h1,
+.page-hero.centered p { margin-left: auto; margin-right: auto; }
+.page-hero.centered .orange-bar { margin-left: auto; margin-right: auto; }
+.page-hero.centered .cta-row { justify-content: center; }
 .hero-split-grid { display:grid; grid-template-columns: 1.1fr 1fr; gap:56px; align-items:center; }
 .jobs-chart { margin:32px auto 0; max-width:360px; }
 .jobs-chart-title { font-family:'Playfair Display', serif; font-size:1.4rem; color:var(--teal-dark); margin:0 0 20px; text-align:center; font-style:italic; font-weight:700; }
