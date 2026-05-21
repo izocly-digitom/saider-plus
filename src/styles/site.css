@@ -258,7 +258,9 @@ nav.primary a.active { color: #fff; font-weight: 600; background: rgba(255,255,2
 .hero::before {
   content: "";
   position: absolute; inset: 0;
-  background: url('/assets/img/entr%C3%A9e%20complexe.jpg') center / cover no-repeat;
+  background:
+    linear-gradient(180deg, rgba(10,81,90,0) 0%, rgba(10,81,90,0) 45%, rgba(10,81,90,0.55) 78%, var(--teal-dark) 100%),
+    url('/assets/img/entr%C3%A9e%20complexe.jpg') center / cover no-repeat;
   z-index: 0;
 }
 .hero.hero-split { min-height: 0; display: block; padding: 84px 0 64px; }
@@ -1029,7 +1031,9 @@ ul.bullets li::before {
   .contact-split > div { padding: 48px 32px; }
   .hero { min-height: 520px; }
   .hero::before {
-    background: url('/assets/img/entr%C3%A9e%20complexe.jpg') center / cover no-repeat;
+    background:
+      linear-gradient(180deg, rgba(10,81,90,0) 0%, rgba(10,81,90,0) 50%, rgba(10,81,90,0.6) 82%, var(--teal-dark) 100%),
+      url('/assets/img/entr%C3%A9e%20complexe.jpg') center / cover no-repeat;
   }
 }
 @media (max-width: 560px) {

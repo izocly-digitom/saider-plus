@@ -19,7 +19,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-soft">
+      <section className="section-teal">
         <div className="container">
           <div className="split">
             <div className="split-text">
