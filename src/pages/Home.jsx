@@ -9,27 +9,18 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero hero-split">
+      <section className="hero">
         <div className="container">
-          <div className="hero-split-grid">
-            <div className="hero-split-text">
-              <h1>
-                S'AIDER PLUS<br />
-                <span className="script">Village</span>
-              </h1>
-              <div className="orange-bar"></div>
-              <p className="baseline">
-                Transformer l'art de vivre antillais en infrastructure territoriale du bien-vieillir.
-              </p>
-              <div className="cta-row">
-                <Link to="/village" className="btn">Découvrir le Village</Link>
-              </div>
-            </div>
-            <img
-              src="/assets/img/entr%C3%A9e%20complexe.jpg"
-              alt="Entrée du Village S'AIDER PLUS"
-              className="hero-split-img"
-            />
+          <h1>
+            S'AIDER PLUS<br />
+            <span className="script">Village</span>
+          </h1>
+          <div className="orange-bar"></div>
+          <p className="baseline">
+            Transformer l'art de vivre antillais en infrastructure territoriale du bien-vieillir.
+          </p>
+          <div className="cta-row">
+            <Link to="/village" className="btn">Découvrir le Village</Link>
           </div>
         </div>
       </section>
@@ -71,7 +62,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-soft">
+      <section>
         <div className="container">
           <div className="split reverse plan-split">
             <div className="split-text">

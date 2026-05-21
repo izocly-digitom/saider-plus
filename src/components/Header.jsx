@@ -24,7 +24,7 @@ export default function Header() {
       <div className="container">
         <Link to="/" className="brand">
           <img
-            src="/assets/img/Logo%20SAIDERPLUS%20couleur.png"
+            src="/assets/img/logo-blanc-saiderplus.png"
             alt="S'AIDER PLUS Village"
             className="brand-mark"
           />

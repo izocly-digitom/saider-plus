@@ -12,6 +12,7 @@ import ImpactStructure from './pages/ImpactStructure.jsx';
 import ImpactModele from './pages/ImpactModele.jsx';
 import ImpactDuplication from './pages/ImpactDuplication.jsx';
 import Contact from './pages/Contact.jsx';
+import Podcasts from './pages/Podcasts.jsx';
 import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/impact-modele" element={<ImpactModele />} />
           <Route path="/impact-duplication" element={<ImpactDuplication />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/podcasts" element={<Podcasts />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

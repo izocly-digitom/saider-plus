@@ -30,9 +30,41 @@ export default function Footer() {
             <a href="mailto:saiderplus.gpe@gmail.com">saiderplus.gpe@gmail.com</a>
           </div>
         </div>
+
+        {/* Newsletter — masqué tant que le service n'est pas branché (Resend, etc.) */}
+        <div className="footer-newsletter" style={{ display: 'none' }}>
+          <h4>Recevez les actualités</h4>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', maxWidth: 420, margin: 0 }}>
+            Une lettre trimestrielle pour suivre l'avancement du projet, les partenariats et les
+            ouvertures à venir.
+          </p>
+          <form
+            className="newsletter-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+            aria-label="Inscription à la newsletter"
+          >
+            <label htmlFor="newsletter-email" className="visually-hidden" style={{ position: 'absolute', left: -9999 }}>
+              Email
+            </label>
+            <input
+              id="newsletter-email"
+              type="email"
+              name="email"
+              placeholder="votre@email.fr"
+              autoComplete="email"
+              required
+            />
+            <button type="submit" className="btn">S'inscrire</button>
+          </form>
+          <p className="newsletter-msg">
+            Service en cours d'intégration — formulaire désactivé.
+          </p>
+        </div>
+
         <div className="footer-bottom">
           <span>© 2026 S'AIDER PLUS Village — Guadeloupe</span>
-          <span>Mars 2026</span>
         </div>
       </div>
     </footer>
