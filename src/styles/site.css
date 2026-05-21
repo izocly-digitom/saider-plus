@@ -938,7 +938,7 @@ ul.bullets li::before {
   .hero { min-height: 480px; }
   .hero::before {
     background: linear-gradient(160deg, var(--teal-dark) 0%, var(--teal-dark) 40%, rgba(10,81,90,0.7) 100%),
-                url('../img/entr%C3%A9e%20complexe.jpg') right center / cover no-repeat;
+                url('/assets/img/entr%C3%A9e%20complexe.jpg') right center / cover no-repeat;
   }
 }
 @media (max-width: 560px) {

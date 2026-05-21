@@ -1,4 +1,18 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/index.html", "destination": "/" },
+    { "source": "/vision.html", "destination": "/vision" },
+    { "source": "/historique.html", "destination": "/historique" },
+    { "source": "/projet.html", "destination": "/projet" },
+    { "source": "/village.html", "destination": "/village" },
+    { "source": "/compagnon.html", "destination": "/compagnon" },
+    { "source": "/impact.html", "destination": "/impact" },
+    { "source": "/impact-structure.html", "destination": "/impact-structure" },
+    { "source": "/impact-modele.html", "destination": "/impact-modele" },
+    { "source": "/impact-duplication.html", "destination": "/impact-duplication" },
+    { "source": "/contact.html", "destination": "/contact" },
+    { "source": "/((?!assets/|.*\\.[a-zA-Z0-9]+$).*)", "destination": "/" }
+  ]
 }
