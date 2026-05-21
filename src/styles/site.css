@@ -286,6 +286,25 @@ nav.primary a.active { color: #fff; font-weight: 600; background: rgba(255,255,2
   line-height: 1.55;
 }
 .hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.link-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.link-cta:hover {
+  color: var(--orange);
+  border-bottom-color: var(--orange);
+  transform: translateX(2px);
+}
+.hero .link-cta { text-shadow: 0 1px 12px rgba(10,81,90,0.35); }
 .hero .tagline {
   position: absolute; bottom: 26px; right: 32px;
   font-size: 0.72rem; letter-spacing: 2px;

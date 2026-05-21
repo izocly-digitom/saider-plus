@@ -15,9 +15,7 @@ export default function Home() {
             Transformer l'art de vivre antillais en infrastructure territoriale du bien-vieillir.
           </h2>
           <div className="orange-bar"></div>
-          <div className="cta-row">
-            <Link to="/village" className="btn">Découvrir le Village</Link>
-          </div>
+          <Link to="/village" className="link-cta">Découvrir le Village →</Link>
         </div>
       </section>
 
