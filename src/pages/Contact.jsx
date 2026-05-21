@@ -8,41 +8,36 @@ export default function Contact() {
   }, []);
 
   return (
-    <section style={{ padding: 0 }}>
-      <div className="container" style={{ paddingTop: 0, paddingBottom: 0 }}>
-        <div className="contact-split">
-          <div className="left">
-            <div className="supra" style={{ color: 'var(--teal-light)' }}>
-              Rejoignez-nous
-            </div>
-            <h1>
-              Co-<br />
-              construisons<br />
-              demain.
-            </h1>
-            <div className="orange-bar"></div>
-            <p>
-              Nous cherchons des partenaires engagés pour co-construire le premier Village S'AIDER
-              PLUS en Guadeloupe, premier jalon d'un réseau de Villages ultramarins et hexagonaux.
-            </p>
-            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 24 }}>
-              <Link to="/projet" className="btn">Relire le projet</Link>
-              <Link to="/impact-modele" className="btn">Voir l'impact attendu</Link>
-            </div>
+    <>
+      <section className="page-hero">
+        <div className="container">
+          <div className="supra">Rejoignez-nous</div>
+          <h1>Co-construisons demain.</h1>
+          <div className="orange-bar"></div>
+          <p style={{ maxWidth: 720 }}>
+            Nous cherchons des partenaires engagés pour co-construire le premier Village S'AIDER
+            PLUS en Guadeloupe, premier jalon d'un réseau de Villages ultramarins et hexagonaux.
+          </p>
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 8 }}>
+            <Link to="/projet" className="btn">Relire le projet</Link>
+            <Link to="/impact-modele" className="btn">Voir l'impact attendu</Link>
           </div>
-          <div className="right">
-            <h2>
-              Rejoignez-<br />nous
-            </h2>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div style={{ maxWidth: 760, margin: '0 auto' }}>
+            <h2>Prenez contact avec l'équipe</h2>
             <div className="orange-bar"></div>
             <p>
-              Collectivités, financeurs, ARS, opérateurs, partenaires : prenez contact avec
-              l'équipe du projet.
+              Collectivités, financeurs, ARS, opérateurs, partenaires : laissez-nous un message et
+              nous reviendrons vers vous rapidement.
             </p>
             <ContactForm />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
