@@ -258,9 +258,7 @@ nav.primary a.active { color: #fff; font-weight: 600; background: rgba(255,255,2
 .hero::before {
   content: "";
   position: absolute; inset: 0;
-  background:
-    linear-gradient(110deg, rgba(10,81,90,0.86) 0%, rgba(10,81,90,0.66) 45%, rgba(10,81,90,0.45) 100%),
-    url('/assets/img/entr%C3%A9e%20complexe.jpg') center / cover no-repeat;
+  background: url('/assets/img/entr%C3%A9e%20complexe.jpg') center / cover no-repeat;
   z-index: 0;
 }
 .hero.hero-split { min-height: 0; display: block; padding: 84px 0 64px; }
@@ -270,6 +268,16 @@ nav.primary a.active { color: #fff; font-weight: 600; background: rgba(255,255,2
 .hero.hero-split .baseline { max-width: 680px; font-size: 1.05rem; margin: 18px 0 28px; }
 .hero .container { position: relative; z-index: 1; padding-top: 80px; padding-bottom: 80px; }
 .hero h1 { color: #fff; max-width: 620px; }
+.hero .hero-headline {
+  color: #fff;
+  max-width: 880px;
+  font-size: clamp(2.4rem, 5.6vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin: 0 0 18px;
+  text-shadow: 0 2px 24px rgba(10,81,90,0.45);
+}
 .hero .baseline {
   max-width: 520px;
   font-size: 1.05rem;
@@ -1002,9 +1010,7 @@ ul.bullets li::before {
   .contact-split > div { padding: 48px 32px; }
   .hero { min-height: 520px; }
   .hero::before {
-    background:
-      linear-gradient(160deg, rgba(10,81,90,0.9) 0%, rgba(10,81,90,0.78) 50%, rgba(10,81,90,0.6) 100%),
-      url('/assets/img/entr%C3%A9e%20complexe.jpg') center / cover no-repeat;
+    background: url('/assets/img/entr%C3%A9e%20complexe.jpg') center / cover no-repeat;
   }
 }
 @media (max-width: 560px) {

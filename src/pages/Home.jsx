@@ -11,14 +11,10 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="container">
-          <h1>
-            S'AIDER PLUS<br />
-            <span className="script">Village</span>
-          </h1>
-          <div className="orange-bar"></div>
-          <p className="baseline">
+          <h2 className="hero-headline">
             Transformer l'art de vivre antillais en infrastructure territoriale du bien-vieillir.
-          </p>
+          </h2>
+          <div className="orange-bar"></div>
           <div className="cta-row">
             <Link to="/village" className="btn">Découvrir le Village</Link>
           </div>
